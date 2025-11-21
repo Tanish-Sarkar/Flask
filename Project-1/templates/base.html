@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{% block title %} Project 1 {% endblock %}</title>
+    <style>
+        :root{
+            --bg:#f5f7fb;
+            --card:#ffffff;
+            --muted:#667085;
+            --accent:#536dfe;
+            --accent-2:#00b894;
+            --radius:10px;
+            --max-width:980px;
+            --glass: rgba(255,255,255,0.6);
+            --shadow: 0 6px 18px rgba(28,39,77,0.08);
+            --mono: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        *{box-sizing:border-box}
+        html,body{height:100%}
+        body{
+            margin:0;
+            font-family:var(--mono);
+            background: linear-gradient(180deg,#f7fbff 0%,var(--bg) 100%);
+            color:#12263f;
+            -webkit-font-smoothing:antialiased;
+            -moz-osx-font-smoothing:grayscale;
+            line-height:1.5;
+            padding-bottom:40px; /* room for footer */
+        }
+
+        header{
+            background: linear-gradient(90deg, rgba(83,109,254,0.95), rgba(0,184,148,0.95));
+            color:#fff;
+            padding:18px 6%;
+            box-shadow: 0 2px 8px rgba(9,30,66,0.08);
+            border-bottom-left-radius:12px;
+            border-bottom-right-radius:12px;
+            margin-bottom:26px;
+        }
+
+        header h2{margin:0;font-weight:600;letter-spacing:0.2px}
+
+        nav{margin-top:8px;display:flex;gap:12px;flex-wrap:wrap}
+        nav a{
+            text-decoration:none;
+            color:rgba(255,255,255,0.95);
+            background:transparent;
+            padding:8px 14px;
+            border-radius:8px;
+            font-weight:600;
+            transition:all .18s ease;
+            box-shadow: none;
+        }
+        nav a:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(9,30,66,0.08)}
+
+        /* page container */
+        .container{
+            max-width:var(--max-width);
+            margin:0 auto;
+            padding:0 20px;
+        }
+
+        /* content blocks */
+        main, .content-card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:22px}
+
+        h1,h2,h3{color:#0b2545;margin-top:0}
+        p{color:var(--muted);margin:0 0 14px}
+
+        /* utility layout */
+        .row{display:flex;gap:16px;flex-wrap:wrap}
+        .col{flex:1;min-width:220px}
+
+        /* forms and inputs */
+        input[type="text"], input[type="password"], input[type="email"], textarea, select{
+            width:100%;
+            padding:10px 12px;
+            border-radius:8px;
+            border:1px solid #e6eef8;
+            background:#fbfdff;
+            outline:none;
+            transition:border-color .12s ease, box-shadow .12s ease;
+            font-size:14px;
+        }
+        input:focus, textarea:focus, select:focus{border-color:var(--accent);box-shadow:0 6px 20px rgba(83,109,254,0.12)}
+
+        /* buttons */
+        .btn{display:inline-block;padding:10px 16px;border-radius:8px;border:none;background:var(--accent);color:#fff;font-weight:700;text-decoration:none;cursor:pointer;transition:transform .12s ease,box-shadow .12s ease}
+        .btn.secondary{background:transparent;border:1px solid #dbe9ff;color:#0b2545}
+        .btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(83,109,254,0.12)}
+
+        footer{max-width:var(--max-width);margin:34px auto 12px;padding:18px 20px;color:var(--muted);text-align:center}
+
+        /* small screens */
+        @media (max-width:640px){
+            header{padding:16px 4%}
+            .container{padding:0 14px}
+            nav{justify-content:flex-start}
+        }
+
+        /* small decorative helpers */
+        .muted{color:var(--muted);font-size:0.95rem}
+        .card{background:var(--card);padding:16px;border-radius:12px;box-shadow:var(--shadow)}
+    </style>
+</head>
+<body>
+    <header>
+        <h2>Project 01</h2>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/login">Login</a>
+        </nav>
+    </header>    
+
+    {% block content %} {% endblock %}
+
+    <footer>
+        <h3>This is just a useless footer. SO just ignore it</h3>
+    </footer>
+</body>
+</html>
