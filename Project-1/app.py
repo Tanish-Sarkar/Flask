@@ -10,3 +10,17 @@ def home():
 def login():
     return render_template('login.html')
 
+@app.route('/submit', methods=['POST'])
+def submit():
+    username = request.form.get('username')
+    password = request.form.get('password')
+
+    valids = {
+        'Zac' : '123',
+        'admin' : '456' 
+    }
+
+    if username in valids and password == valids[username]:
+        return render_template('welcome.html', name = username)
+    else:
+        return "Invalid user"
