@@ -5,7 +5,7 @@ app = Flask(__name__)
 @app.route('/feedback', methods = ['POST', 'GET'])
 def feedback():
     if request.method == 'POST':
-        name = request.form.get("username")
+        name = request.form.get("username")   # returns None if not found (prevent KeyError and app crash)
         message = request.form.get('message')
 
         return render_template("thankyou.html", user = name, message = message)
