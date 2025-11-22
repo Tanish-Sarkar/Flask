@@ -23,8 +23,10 @@ def form():
         if not name:
             flash("Name can not be empty")
             return redirect(url_for('form'))
+        
         flash(f"Thanks {name}, your feedback was saved")
         return redirect(url_for("thankyou"))
+    
     return render_template("form.html")
 
 @app.route('/thankyou')
