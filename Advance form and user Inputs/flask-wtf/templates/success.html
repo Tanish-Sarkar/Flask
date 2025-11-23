@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% block title %} Success {% endblock %}
+
+{% block content %}
+    <h2>Registration Successful!</h2>
+    <a href="{{ url_for('register') }}">Register Another User</a>
+{% endblock %}
